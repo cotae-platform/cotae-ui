@@ -9,18 +9,9 @@ interface Props {
   children: ReactNode;
 }
 
-function CommonGrid({
-  direction,
-  justifyContent,
-  alignItems,
-  children,
-}: Props) {
+function CommonGrid({ direction, justifyContent, alignItems, children }: Props) {
   return (
-    <Wrapper
-      direction={direction!}
-      justifyContent={justifyContent!}
-      alignItems={alignItems!}
-    >
+    <Wrapper direction={direction!} justifyContent={justifyContent!} alignItems={alignItems!}>
       {children}
     </Wrapper>
   );
