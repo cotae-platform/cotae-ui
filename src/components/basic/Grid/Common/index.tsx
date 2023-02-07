@@ -11,16 +11,14 @@ interface Props {
 
 function CommonGrid({ direction, justifyContent, alignItems, children }: Props) {
   return (
-    <Wrapper direction={direction!} justifyContent={justifyContent!} alignItems={alignItems!}>
+    <Wrapper
+      direction={direction ?? 'row'}
+      justifyContent={justifyContent ?? 'flex-start'}
+      alignItems={alignItems ?? 'flex-start'}
+    >
       {children}
     </Wrapper>
   );
 }
-
-CommonGrid.defaultProps = {
-  direction: 'row',
-  justifyContent: 'flex-start',
-  alignItems: 'flex-start',
-};
 
 export default CommonGrid;

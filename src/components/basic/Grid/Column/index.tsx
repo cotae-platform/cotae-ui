@@ -10,15 +10,10 @@ interface Props {
 
 function Column({ justifyContent, alignItems, children }: Props) {
   return (
-    <CommonGrid direction="column" justifyContent={justifyContent!} alignItems={alignItems!}>
+    <CommonGrid direction="column" justifyContent={justifyContent} alignItems={alignItems}>
       {children}
     </CommonGrid>
   );
 }
-
-Column.defaultProps = {
-  justifyContent: 'flex-start',
-  alignItems: 'flex-start',
-};
 
 export default Column;
