@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { Button } from './style';
+
 interface Props {
   type: 'primary' | 'secondary' | 'tertiary';
   size: 'big' | 'medium' | 'small';
@@ -7,12 +9,12 @@ interface Props {
   children: ReactNode;
 }
 
-function Button({ size, type, onClick, children }: Props) {
+function CommonButton({ size, type, onClick, children }: Props) {
   return (
-    <button className={`${size}-button ${type}`} onClick={onClick} type="button">
+    <Button className={`${size}-button ${type}`} onClick={onClick} type="button">
       {children}
-    </button>
+    </Button>
   );
 }
 
-export default Button;
+export default CommonButton;

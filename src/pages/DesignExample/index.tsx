@@ -2,14 +2,14 @@ import Button from '@src/components/basic/buttons/Button';
 import Column from '@src/components/basic/Grid/Column';
 import Row from '@src/components/basic/Grid/Row';
 
-import { Wrapper, Padding } from './style';
+import { Wrapper, Padding, Title } from './style';
 
 function DesignExamplePage() {
   return (
     <Wrapper>
       <Column>
-        <Row>
-          <p>primary</p>
+        <Row alignItems="center">
+          <Title>primary</Title>
           <Padding>
             <Button type="primary" size="small" onClick={() => {}}>
               small
@@ -26,8 +26,8 @@ function DesignExamplePage() {
             </Button>
           </Padding>
         </Row>
-        <Row>
-          <p>secondary</p>
+        <Row alignItems="center">
+          <Title>secondary</Title>
           <Padding>
             <Button type="secondary" size="small" onClick={() => {}}>
               small
@@ -44,8 +44,8 @@ function DesignExamplePage() {
             </Button>
           </Padding>
         </Row>
-        <Row>
-          <p>tertiary</p>
+        <Row alignItems="center">
+          <Title>tertiary</Title>
           <Padding>
             <Button type="tertiary" size="small" onClick={() => {}}>
               small

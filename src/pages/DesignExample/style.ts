@@ -8,4 +8,8 @@ const Padding = styled.div`
   padding: 20px;
 `;
 
-export { Wrapper, Padding };
+const Title = styled.div`
+  width: 100px;
+`;
+
+export { Wrapper, Padding, Title };
