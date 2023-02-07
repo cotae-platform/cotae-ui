@@ -11,17 +11,17 @@ function DesignExamplePage() {
         <Row alignItems="center">
           <Title>primary</Title>
           <Padding>
-            <Button type="primary" size="small" onClick={() => {}}>
+            <Button color="primary" size="small" onClick={() => {}}>
               small
             </Button>
           </Padding>
           <Padding>
-            <Button type="primary" size="medium" onClick={() => {}}>
+            <Button color="primary" size="medium" onClick={() => {}}>
               medium
             </Button>
           </Padding>
           <Padding>
-            <Button type="primary" size="big" onClick={() => {}}>
+            <Button color="primary" size="big" onClick={() => {}}>
               big
             </Button>
           </Padding>
@@ -29,17 +29,17 @@ function DesignExamplePage() {
         <Row alignItems="center">
           <Title>secondary</Title>
           <Padding>
-            <Button type="secondary" size="small" onClick={() => {}}>
+            <Button color="secondary" size="small" onClick={() => {}}>
               small
             </Button>
           </Padding>
           <Padding>
-            <Button type="secondary" size="medium" onClick={() => {}}>
+            <Button color="secondary" size="medium" onClick={() => {}}>
               medium
             </Button>
           </Padding>
           <Padding>
-            <Button type="secondary" size="big" onClick={() => {}}>
+            <Button color="secondary" size="big" onClick={() => {}}>
               big
             </Button>
           </Padding>
@@ -47,17 +47,17 @@ function DesignExamplePage() {
         <Row alignItems="center">
           <Title>tertiary</Title>
           <Padding>
-            <Button type="tertiary" size="small" onClick={() => {}}>
+            <Button color="tertiary" size="small" onClick={() => {}}>
               small
             </Button>
           </Padding>
           <Padding>
-            <Button type="tertiary" size="medium" onClick={() => {}}>
+            <Button color="tertiary" size="medium" onClick={() => {}}>
               medium
             </Button>
           </Padding>
           <Padding>
-            <Button type="tertiary" size="big" onClick={() => {}}>
+            <Button color="tertiary" size="big" onClick={() => {}}>
               big
             </Button>
           </Padding>
