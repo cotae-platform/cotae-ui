@@ -1,6 +1,6 @@
-import Button from '@src/components/basic/buttons/Button';
-import Column from '@src/components/basic/Grid/Column';
-import Row from '@src/components/basic/Grid/Row';
+import Button from '@src/components/basic/Button';
+import Column from '@src/components/basic/grid/Column';
+import Row from '@src/components/basic/grid/Row';
 
 import { Wrapper, Padding, Title } from './style';
 
