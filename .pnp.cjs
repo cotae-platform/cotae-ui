@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@typescript-eslint/eslint-plugin", "virtual:137d56574fe2ba22dde1241e7aa311556ecc3f0332162ca7a7362804d2e1b5ae525db126feaaa63573fa1c6cda6af3a8e75e071f77d3fc3538157dd321fb3b65#npm:5.47.1"],\
             ["@typescript-eslint/parser", "virtual:137d56574fe2ba22dde1241e7aa311556ecc3f0332162ca7a7362804d2e1b5ae525db126feaaa63573fa1c6cda6af3a8e75e071f77d3fc3538157dd321fb3b65#npm:5.47.1"],\
+            ["classnames", "npm:2.3.2"],\
             ["craco-alias", "npm:3.0.1"],\
             ["eslint", "npm:8.30.0"],\
             ["eslint-config-airbnb-typescript", "virtual:137d56574fe2ba22dde1241e7aa311556ecc3f0332162ca7a7362804d2e1b5ae525db126feaaa63573fa1c6cda6af3a8e75e071f77d3fc3538157dd321fb3b65#npm:17.0.0"],\
@@ -7829,6 +7830,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["classnames", [\
+        ["npm:2.3.2", {\
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.2-d2fdae468d-2c62199789.zip/node_modules/classnames/",\
+          "packageDependencies": [\
+            ["classnames", "npm:2.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["clean-css", [\
         ["npm:5.3.1", {\
           "packageLocation": "./.yarn/cache/clean-css-npm-5.3.1-e052e24a9f-860696c605.zip/node_modules/clean-css/",\
@@ -8306,6 +8316,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@typescript-eslint/eslint-plugin", "virtual:137d56574fe2ba22dde1241e7aa311556ecc3f0332162ca7a7362804d2e1b5ae525db126feaaa63573fa1c6cda6af3a8e75e071f77d3fc3538157dd321fb3b65#npm:5.47.1"],\
             ["@typescript-eslint/parser", "virtual:137d56574fe2ba22dde1241e7aa311556ecc3f0332162ca7a7362804d2e1b5ae525db126feaaa63573fa1c6cda6af3a8e75e071f77d3fc3538157dd321fb3b65#npm:5.47.1"],\
+            ["classnames", "npm:2.3.2"],\
             ["craco-alias", "npm:3.0.1"],\
             ["eslint", "npm:8.30.0"],\
             ["eslint-config-airbnb-typescript", "virtual:137d56574fe2ba22dde1241e7aa311556ecc3f0332162ca7a7362804d2e1b5ae525db126feaaa63573fa1c6cda6af3a8e75e071f77d3fc3538157dd321fb3b65#npm:17.0.0"],\
