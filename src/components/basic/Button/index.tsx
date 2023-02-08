@@ -1,19 +1,19 @@
 import { ReactNode } from 'react';
-import cx from 'classnames';
+
+import { ColorType, SizeType } from '@src/types';
 
 import { Button } from './style';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  color: 'primary' | 'secondary' | 'tertiary';
-  size: 'big' | 'medium' | 'small';
+  color: ColorType;
+  size: SizeType;
   onClick: () => void;
   children: ReactNode;
 }
 
-function CommonButton({ className, type = 'button', color, size, onClick, children }: Props) {
+function CommonButton({ type = 'button', color, size, onClick, children }: Props) {
   return (
-    <Button type={type} className={cx(`${size}-button`, color, className)} onClick={onClick}>
+    <Button type={type} color={color} size={size} onClick={onClick}>
       {children}
     </Button>
   );
