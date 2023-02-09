@@ -45,12 +45,14 @@ const DropdownIcon = styled.i<StatusProps>`
 
 const DropdownItemWrapper = styled.div`
   display: flex;
+  position: absolute;
   flex-direction: column;
+  z-index: 3;
 `;
 
 const DropdownItems = styled.div<ItemProps>`
   display: flex;
-  background-color: ${(props) => (props.current ? 'rgb(2, 62, 138, 0.6)' : 'white')};
+  background-color: ${(props) => (props.current ? '#5D84B4' : 'white')};
   color: ${(props) => (props.current ? 'white' : 'black')};
   width: 80px;
   height: 30px;

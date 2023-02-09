@@ -34,13 +34,14 @@ function Dropdown({ items, onChange }: Props) {
     </DropdownItems>
   ));
 
-  const handleOnClickDropdown = () => {
+  const handleClickDropdown = () => {
     setIsOpen((prevState) => !prevState);
   };
 
   const handleClickOutside = (e: MouseEvent) => {
-    if (dropdownRef.current && !(dropdownRef.current as Element).contains(e.target as Node))
+    if (dropdownRef.current && !(dropdownRef.current as Element).contains(e.target as Node)) {
       setIsOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -52,7 +53,7 @@ function Dropdown({ items, onChange }: Props) {
 
   return (
     <>
-      <DropdownWrapper ref={dropdownRef} isOpen={isOpen} onClick={handleOnClickDropdown}>
+      <DropdownWrapper ref={dropdownRef} isOpen={isOpen} onClick={handleClickDropdown}>
         <DropdownSelected>{currentValue}</DropdownSelected>
         <DropdownIcon isOpen={isOpen} />
       </DropdownWrapper>
