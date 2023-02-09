@@ -1,6 +1,7 @@
 import Button from '@src/components/basic/Button';
 import Column from '@src/components/basic/grid/Column';
 import Row from '@src/components/basic/grid/Row';
+import Dropdown from '@src/components/basic/Dropdown';
 
 import { ColorType, SizeType } from '@src/types';
 
@@ -11,6 +12,7 @@ function DesignExamplePage() {
   const sizeList: SizeType[] = ['small', 'medium', 'big'];
   return (
     <Wrapper>
+      <Title bold>Buttons</Title>
       <Column>
         {colorList.map((color, index) => (
           <Row key={color + index.toString()} alignItems="center">
@@ -24,6 +26,17 @@ function DesignExamplePage() {
             ))}
           </Row>
         ))}
+      </Column>
+      <Column>
+        <Title bold>Dropdown</Title>
+        <Row>
+          <Padding>
+            <Dropdown
+              items={['item1', 'item2', 'item3', 'item4']}
+              onChange={(v) => console.log(v)}
+            />
+          </Padding>
+        </Row>
       </Column>
     </Wrapper>
   );
