@@ -57,9 +57,10 @@ const Placeholder = styled.p<PlaceHolderProps>`
   ${({ isAnimationOn }) =>
     isAnimationOn &&
     `
-    transform:translateY(-23px);
+    transform: translateY(-22px);
     font-size:14px;
     padding: 0 4px;
+    color: #023e8a;
   `}}
 `;
 
