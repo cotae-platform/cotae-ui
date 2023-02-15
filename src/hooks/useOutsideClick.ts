@@ -1,14 +1,12 @@
-import { Dispatch, MutableRefObject, SetStateAction, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-interface Props {
-  ref: MutableRefObject<unknown>;
-  close: Dispatch<SetStateAction<boolean>>;
-}
+function useOutsideClick() {
+  const ref = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-function useOutsideClick({ ref, close }: Props) {
   const handleClickOutside = (e: MouseEvent) => {
     if (ref.current && !(ref.current as Element).contains(e.target as Node)) {
-      close(false);
+      setIsOpen(false);
     }
   };
 
@@ -18,6 +16,8 @@ function useOutsideClick({ ref, close }: Props) {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
+
+  return { ref, isOpen, setIsOpen };
 }
 
 export default useOutsideClick;
