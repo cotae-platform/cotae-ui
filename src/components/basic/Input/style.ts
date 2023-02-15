@@ -1,12 +1,17 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-interface PlaceHolderProps {
-  isAnimationOn: boolean;
+interface InteractionProps {
+  isValid: boolean;
+  isFocused: boolean;
+}
+
+interface PlaceHolderProps extends InteractionProps {
+  hasValue: boolean;
 }
 
 const defaultInput = css`
-  width: 200px;
+  width: 300px;
   height: 30px;
   padding: 8px;
 
@@ -15,6 +20,8 @@ const defaultInput = css`
 
   border: none;
 
+  transition: all 150ms ease-out;
+
   &:focus {
     outline: none;
   }
@@ -22,16 +29,22 @@ const defaultInput = css`
 
 const Wrapper = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 
-const OutlineInput = styled.input`
+const OutlineInput = styled.input<InteractionProps>`
   ${defaultInput}
 
   border-radius: 4px;
-  border: 1px solid #9d9d9d;
+  border: 1px solid
+    ${({ theme, isFocused, isValid }) =>
+      isValid ? (isFocused ? '#023e8a' : '#9d9d9d') : theme.colors.tertiary.background};
 
   &:focus {
-    border: 1px solid #023e8a;
+    border: 1px solid
+      ${({ theme, isFocused, isValid }) =>
+        isValid ? (isFocused ? '#023e8a' : '#9d9d9d') : theme.colors.tertiary.background};
   }
 `;
 
@@ -54,14 +67,22 @@ const Placeholder = styled.p<PlaceHolderProps>`
   background: #fff;
 
   transition: all 150ms ease-out;
-  ${({ isAnimationOn }) =>
-    isAnimationOn &&
+  ${({ theme, isFocused, hasValue, isValid }) =>
+    (isFocused || hasValue) &&
     `
     transform: translateY(-22px);
     font-size:14px;
     padding: 0 4px;
-    color: #023e8a;
+    color: ${isValid ? (isFocused ? '#023e8a' : '#9D9D9D') : theme.colors.tertiary.background};
   `}}
 `;
 
-export { Wrapper, OutlineInput, UnderlineInput, Placeholder };
+const Warning = styled.p`
+  position: absolute;
+  bottom: -14px;
+
+  color: ${({ theme }) => theme.colors.tertiary.background};
+  font-size: 12px;
+`;
+
+export { Wrapper, OutlineInput, UnderlineInput, Placeholder, Warning };
