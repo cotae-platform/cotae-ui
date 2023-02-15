@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import useOutsideClick from '@src/hooks/useOutsideClick';
+import { useState } from 'react';
 import {
   DropdownWrapper,
   DropdownSelected,
@@ -14,9 +15,8 @@ interface Props {
 
 function Dropdown({ items, onChange }: Props) {
   const [currentValue, setCurrentValue] = useState(items.length ? items[0] : '');
-  const [isOpen, setIsOpen] = useState(false);
 
-  const dropdownRef = useRef(null);
+  const { ref: dropdownRef, isOpen, setIsOpen } = useOutsideClick();
 
   const handleChangeSelected = (value: string) => {
     onChange(value);
@@ -37,19 +37,6 @@ function Dropdown({ items, onChange }: Props) {
   const handleClickDropdown = () => {
     setIsOpen((prevState) => !prevState);
   };
-
-  const handleClickOutside = (e: MouseEvent) => {
-    if (dropdownRef.current && !(dropdownRef.current as Element).contains(e.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
 
   return (
     <>
