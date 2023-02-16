@@ -1,12 +1,21 @@
 import { InputHTMLAttributes, useMemo, useState } from 'react';
 
-import { Wrapper, OutlineInput, UnderlineInput, Placeholder } from './style';
+import { Wrapper, OutlineInput, UnderlineInput, Placeholder, Warning } from './style';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   underline?: boolean;
+  warning?: string;
+  isValid?: boolean;
 }
 
-function CommonInput({ type = 'text', underline = false, value, placeholder, onChange }: Props) {
+function CommonInput({
+  type = 'text',
+  underline = false,
+  warning = '',
+  isValid = true,
+  value,
+  ...props
+}: Props) {
   const [isInputFocused, setIsInputFocused] = useState(false);
   const hasValue = useMemo(() => !!value, [value]);
 
@@ -19,22 +28,28 @@ function CommonInput({ type = 'text', underline = false, value, placeholder, onC
   };
 
   return (
-    <>
+    <Wrapper>
       {underline ? (
-        <UnderlineInput type={type} value={value} onChange={onChange} placeholder={placeholder} />
+        <UnderlineInput type={type} value={value} {...props} />
       ) : (
-        <Wrapper>
-          <Placeholder isAnimationOn={isInputFocused || hasValue}>{placeholder}</Placeholder>
+        <>
+          <Placeholder isFocused={isInputFocused} hasValue={hasValue} isValid={isValid}>
+            {props.placeholder}
+          </Placeholder>
           <OutlineInput
             type={type}
             value={value}
-            onChange={onChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
+            isValid={isValid}
+            isFocused={isInputFocused}
+            {...props}
+            placeholder=""
           />
-        </Wrapper>
+        </>
       )}
-    </>
+      {!isValid && <Warning>{warning}</Warning>}
+    </Wrapper>
   );
 }
 
