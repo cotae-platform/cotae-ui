@@ -7,9 +7,7 @@ interface Props {
 }
 
 function Table({ columns, data }: Props) {
-  return (
-    <RCTable columns={columns} data={data} style={{ border: '1px solid black', padding: '20px' }} />
-  );
+  return <RCTable columns={columns} data={data} />;
 }
 
 export default Table;

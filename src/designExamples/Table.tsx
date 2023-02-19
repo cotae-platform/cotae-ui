@@ -9,7 +9,7 @@ function TableExample() {
       title: 'No.',
       dataIndex: 'number',
       key: 'number',
-      width: 100,
+      width: 50,
       align: 'center',
     },
     {
@@ -30,7 +30,7 @@ function TableExample() {
       title: 'Correct %',
       dataIndex: 'correctRate',
       key: 'correctRate',
-      width: 50,
+      width: 70,
       align: 'center',
     },
   ];
