@@ -7,10 +7,6 @@ const tableGlobalCss = css`
   td {
     border: 1px solid #d9d9d9;
   }
-  /* 
-  tr:nth-child(even) {
-    background-color: pink;
-  } */
   thead {
     background-color: #023e8a;
     color: white;
