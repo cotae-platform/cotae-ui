@@ -6,6 +6,7 @@ const tableGlobalCss = css`
   }
   td {
     border: 1px solid #d9d9d9;
+    padding: 10px;
   }
   thead {
     background-color: #023e8a;
