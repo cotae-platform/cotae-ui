@@ -1,25 +1,23 @@
-import React from "react";
-import logo from "@src/logo.svg";
-import "@src/App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Global, ThemeProvider } from '@emotion/react';
+
+import HomePage from '@src/pages/Home';
+import DesignExamplePage from '@src/pages/DesignExample';
+
+import globalCss from '@src/styles/globalCss';
+import { globalTheme } from '@src/styles/themes/globalTheme';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Global styles={globalCss} />
+      <ThemeProvider theme={globalTheme}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/design-example" element={<DesignExamplePage />} />
+        </Routes>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
