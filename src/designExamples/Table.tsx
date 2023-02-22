@@ -1,10 +1,10 @@
 import Row from '@src/components/basic/grid/Row';
 import Table from '@src/components/basic/Table';
-import { TableColumns, TableRows } from '@src/types/table';
+import { TableColumnType, TableRowType } from '@src/types';
 import { Padding, Title } from './style';
 
 function TableExample() {
-  const columns: TableColumns[] = [
+  const columns: TableColumnType[] = [
     {
       title: 'No.',
       dataIndex: 'number',
@@ -35,7 +35,7 @@ function TableExample() {
     },
   ];
 
-  const data: TableRows[] = [
+  const data: TableRowType[] = [
     { number: '0', title: 'A+B', level: '1', correctRate: '43.98%' },
     { number: '1', title: 'A-B', level: '1', correctRate: '43.98%' },
     { number: '2', title: 'AxB', level: '1', correctRate: '43.98%' },
