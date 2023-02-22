@@ -1,9 +1,9 @@
 import RCTable from 'rc-table';
-import { TableColumns, TableRows } from '@src/types/table';
+import { TableColumnType, TableRowType } from '@src/types/table';
 
 interface Props {
-  columns: TableColumns[];
-  data: TableRows[];
+  columns: TableColumnType[];
+  data: TableRowType[];
 }
 
 function Table({ columns, data }: Props) {

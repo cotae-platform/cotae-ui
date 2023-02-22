@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-export type TableColumns = {
+export type TableColumnType = {
   title: string;
   dataIndex: string;
   key: string;
@@ -11,6 +11,6 @@ export type TableColumns = {
   ellipsis?: boolean;
 };
 
-export type TableRows = {
+export type TableRowType = {
   [key: string]: string;
 };
