@@ -13,7 +13,6 @@ interface PlaceHolderProps extends InteractionProps {
 const defaultInput = css`
   width: 300px;
   height: 30px;
-  padding: 8px;
 
   font-size: 16px;
   font-weight: normal;
@@ -36,6 +35,8 @@ const Wrapper = styled.div`
 const OutlineInput = styled.input<InteractionProps>`
   ${defaultInput}
 
+  padding: 8px;
+
   border-radius: 4px;
   border: 1px solid
     ${({ theme, isFocused, isValid }) =>
@@ -51,7 +52,9 @@ const OutlineInput = styled.input<InteractionProps>`
 const UnderlineInput = styled.input`
   ${defaultInput}
 
-  border-bottom: 1px solid #9D9D9D;
+  padding: 8px 8px 4px 8px;
+
+  border-bottom: 1px solid #9d9d9d;
 
   &:focus {
     border-bottom: 1px solid #023e8a;
